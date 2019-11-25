@@ -17,22 +17,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VCard</title>
+    <link rel="stylesheet" href="basic.css">
     <link rel="stylesheet" href="<?=$_SESSION['template']?>.css">
     <style>
-        body{
-            width:100%;
-            height:100%;
-        }
-        #content{
-            width:30%;
-            height:55%;
-            margin:100px auto;
-            background:#c1c1c1;
-            text-align:center;
-        }
-        #content form{       
-            padding:20px;
-        }
 
     </style>
 </head>
@@ -40,20 +27,38 @@ session_start();
 <body>
     <div id="content">
         <form>
-            <img src="upload/<?=$_COOKIE['fileName']?>" width="200px"><br>
-            <span>姓名:</span><br>
-            <input type="text" name="name" vale="name" size="15" value="<?=$_SESSION['name']?>"><br><br>
-            <span>職稱:</span><br>
-            <input type="text" name="job" size="15" value="<?=$_SESSION['job']?>"><br><br>
-            <span>電話:</span><br>
-            <input type="tel" name="tel" value="<?=$_SESSION['tel']?>"><br><br>
-            <span>電子信箱:</span><br>
-            <input type="email" name="email" value="<?=$_SESSION['email']?>"><br><br>
-            <span>技能簡介:</span><br>
-            <textarea name="info" id="info" cols="23" rows="5"><?=$_SESSION['info']?></textarea><br><br>
-            <span>選擇樣式:</span><br>
-            <span><?=$_SESSION['template']?></span>
+            <table id="tab1">
+                <tr>
+                    <td rowspan="7"><img src="upload/<?=$_COOKIE['fileName']?>" width="200px" id="photo"></td>
+                    <td>姓　　名：</td>
+                    <td><?=$_SESSION['name']?></td>
+                </tr>
+                <tr>
+                    <td>職　　稱：</td>
+                    <td><?=$_SESSION['job']?></td>
+                </tr>
+                <tr>
+                    <td>電　　話：</td>
+                    <td><?=$_SESSION['tel']?></td>
+                </tr>
+                <tr>
+                    <td>電子信箱：</td>
+                    <td><?=$_SESSION['email']?></td>
+                </tr>
+                <tr>
+                    <td>技能簡介：</td>
+                    <td><?=$_SESSION['info']?></td>
+                </tr>
+            </table>
         </form>
+        <table width="100%" cellpadding="5px">
+            <tr>
+                <td id="back"><a href="index.php"><-</a></td>
+
+                <td id="tpl">樣式：<?=$_SESSION['template']?></td>
+            </tr>
+        </table>
+
     </div>
 
 
