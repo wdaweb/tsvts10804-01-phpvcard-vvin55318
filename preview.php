@@ -5,8 +5,6 @@
  */
 // if(empty($_SESSION)) header('location:index.php');
 session_start();
-print_r($_SESSION);
-
 ?>
 
 
@@ -19,7 +17,7 @@ print_r($_SESSION);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VCard</title>
-    <link rel="stylesheet" href="<?=$_SESSION?>.css">
+    <link rel="stylesheet" href="<?=$_SESSION['template']?>.css">
     <style>
         body{
             width:100%;
@@ -42,6 +40,7 @@ print_r($_SESSION);
 <body>
     <div id="content">
         <form>
+            <img src="upload/<?=$_COOKIE['fileName']?>" width="200px"><br>
             <span>姓名:</span><br>
             <input type="text" name="name" vale="name" size="15" value="<?=$_SESSION['name']?>"><br><br>
             <span>職稱:</span><br>

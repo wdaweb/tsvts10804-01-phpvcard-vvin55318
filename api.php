@@ -6,7 +6,8 @@
 session_start();
  if(($_POST)){
      $_SESSION=$_POST;
-     $_COOKIE=$_FILES;
+     copy($_FILES['photo']['tmp_name'],"upload/".$_FILES['photo']['name']);
+     setcookie("fileName",$_FILES['photo']['name']);
      header('location:preview.php');
  }
  else header('location:index.php');
