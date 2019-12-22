@@ -11,4 +11,3 @@ session_start();
      header('location:preview.php');
  }
  else header('location:index.php');
-?>
